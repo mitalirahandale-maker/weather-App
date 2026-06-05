@@ -1,0 +1,213 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient( 45deg,rgb(230, 121, 121) ,pink,rgb(158, 158, 231));
+    background-size: 400%,400%;
+    animation: bganimation 8s ease infinite;
+}
+/* loader */
+#loader{
+    position: fixed;
+    inset: 0;
+
+    background: white; 
+    display: flex;
+    flex-direction: center;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+#percent{
+    margin-top: 20px;
+}
+/* dashboard */
+.cointaner{
+    width: 90%;
+    max-width: 1000px;
+    height: 600px;
+
+    display: flex;
+    border-radius: 20px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    background: rgb(234, 214, 214);
+    box-shadow: 0 0 20px gray;
+}
+/* sliding sidebar */
+.sidebar{
+    width: 200px;
+    padding: 20px;
+    background: rgb(115, 105, 105);
+    color: white;
+    position: relative;
+    animation: slidemenu 1s forwards;
+}
+.sidebar h2 {
+    margin-bottom: 20px;
+}
+.sidebar p {
+    margin: 15px 0;
+}
+/* main */
+.main{
+    flex: 1;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.typing{
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-bottom: 30px;
+
+    animation: typing 4s steps(25) forwards;
+}
+.weather-card{
+    width: 320px;
+    padding: 25px;
+    text-align: center;
+    border-radius: 20px;
+    background: white;
+    animation: float 3s ease-in-out infinite;
+}
+.icon{
+    font-size: 70px;
+    animation: bounce 3s infinite;
+
+}
+.temp{
+    margin: 15px 0;
+    animation: colorchange 3s infinite;
+}
+input{
+    width: 100%;
+    padding: 8px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 10px;
+    background:wheat
+    
+    
+}
+button{
+    margin-top: 15px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background: palevioletred;
+    color: white;
+    cursor: pointer;
+    animation: pulse 1.5s infinite;
+
+}
+.spinner{
+    width: 100px;
+    height: 100px;
+
+    border: 10px solid gray;
+    border-top: 10px solid blue;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+
+
+
+/* animation */
+@keyframes bganimation{
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+@keyframes typing{
+    from{
+        width: 0;
+    }
+    to{
+        width: 80%;
+    }
+}
+@keyframes  slidemenu{
+    from{
+        transform: translateX(-250px);
+    }
+    to{
+        transform: translateX(0);
+    }
+}
+@keyframes  float{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-15px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+@keyframes  bounce{
+    0%,100%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-15px);
+    }
+}
+@keyframes pulse{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+@keyframes colorchange{
+    0%{
+        color: red;
+    }
+    20%{
+        color: green;
+    }
+    50%{
+        color: orange;
+    }
+    100%{
+        color: red;
+    }
+    
+    
+}
+@keyframes spin{
+    from{
+        transform: rotate(0);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+
+
+
